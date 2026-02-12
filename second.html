@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رسالة حب 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #800040;
+      max-width: 600px;
+      margin-top: 0;
+      z-index: 10;
+      position: relative;
+    }
+
+    .english {
+      font-size: 1.8rem;
+      color: #ff3366;
+      font-weight: bold;
+      margin-top: 15px;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px #fff;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 2rem;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) scale(1);}
+      100% { transform: translateY(100vh) scale(1.2);}
+    }
+  </style>
+</head>
+<body>
+
+  <p>
+    بس حبيت أقولك إن وجودك بحياتي شيء كثير جميل وابتسامتك بتعمل فرق كبير  
+    وانتي افضل صديقه قابلتها بحياتي كلها
+  </p>
+  
+  <div class="english">✨ T Love you ss 🤍 ✨</div>
+
+  <script>
+    function createHearts() {
+      const colors = ['#ff1a75', '#ff4d88', '#ff66b2', '#ff99cc'];
+      for (let i = 0; i < 30; i++) { // عدد القلوب
+        let heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerText = '💖';
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.fontSize = (20 + Math.random()*25) + 'px';
+        heart.style.animationDuration = (3 + Math.random()*4) + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 8000);
+      }
+    }
+    createHearts();
+    setInterval(createHearts, 1000); // توليد قلوب باستمرار
+  </script>
+
+</body>
+</html>
